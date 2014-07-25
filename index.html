@@ -20,40 +20,47 @@
                     var string = "";
                     var passwords = diceware(number.value);
                     for(var i = 0, len = passwords.length;  i < len; i++) {
-                        string += '<span class="word" style="color:#' + (i % 2 == 0 ? '911' : '0b9') + ';">' + passwords[i] + '</span>';
+                        string += '<span class="word" style="color:#' + (i % 2 == 0 ? '911' : '0b7') + ';">' + passwords[i] + '</span>';
                     }
                     result.innerHTML = string;
-                    help.style.display = "block";
+                    //help.style.display = "block";
                 };
             };
         </script>
         <style>
             body {
-                max-width: 45em;
+                max-width: 44em;
                 margin: 0 auto;
                 line-height: 1.45;
+                font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
             }
             label {
                 display: block;
-                font-family: sans-serif;
-            }
-            p {
-                margin: 1em 0;
-                font-family: serif;
-                font-style: italic;
             }
 
-            section {
-                margin-bottom: 2em;
-                margin-top: 0;
-            }
-
-            section:last-child {
-                margin-bottom: 0;
+            label i {
+                display: block;
+                letter-spacing: .04px;
             }
 
             h1 {
-                line-height: 1em;
+                margin-bottom: .5em;
+                margin-top: 1em;
+                font-weight: 900;
+            }
+
+            p {
+                margin: 1em 0 0 0;
+            }
+
+            h1 + p {
+                margin-top: 0;
+                margin-bottom: 1em;
+            }
+
+            section {
+                margin-bottom: 0;
+                margin-top: 2em;
             }
 
             .word {
@@ -63,22 +70,21 @@
     </head>
     <body>
         <section>
-            <p>This app generates passwords based on the <a href="http://world.std.com/~reinhold/diceware.html">Diceware Password Methodology</a>, which creates passwords made mostly of random words instead of random characters and symbols. This makes the passwords both more secure (because there are about 85,000 possible words compared to 90 possible symbols) and easier to remember&mdash;no more "hek2aCa87x.;s"-style passwords. The downside is that it makes your passwords somewhat longer, but it&rsquo;s totally worth it.</p>
+            <h1>Overview</h1>
+            <p>This app generates passwords based on the <a href="http://world.std.com/~reinhold/diceware.html">Diceware Password Methodology</a>, which creates passwords made mostly of <strong>random words instead of random characters and symbols</strong>. This makes the passwords both more secure (because there are about 85,000 possible words compared to 90 possible symbols) and easier to remember&mdash;no more "hek2aCa87x.;s"-style passwords. The downside is that it makes your passwords somewhat longer, but it&rsquo;s totally worth it.</p>
 
-            <p>All the calculations for generating the password are done on your computer&mdash;the password is never sent over the internet, so using this page is totally secure. You can also <a href="https://github.com/ethanresnick/diceware-js">inspect the code</a>, if you&rsquo;re so inclined.</p>
-
-            <p>Note: generating passwords may take a few seconds, depending on the speed of your computer.</p>
+            <p>Below, all the calculations for generating a password are done on your computer&mdash;the password is never sent over the internet&mdash;so using this page is secure. The curious can also <a href="https://github.com/ethanresnick/diceware-js">inspect the code</a>.</p>
+        </section>
+        <section>
+            <h1>Generate a Password</h1>
 
             <label for="number">
-                How many words do you want in your password?
-                <br/>(5 is a safe number; it&rsquo;ll give you security roughly equal to a password of 12 random characters.)
+                How many words do you want in your password? <i>(5 is a safe number; it&rsquo;ll give you security roughly equal to a password of 12 random characters.)</i>
             </label>
             <input type="number" value="5" class="number" id="number" />
             <input type="submit" value="Generate!" id="generate" />
-        </section>
-        <section>
-            <h1>Result</h1>
-            <div id="result"><p>A new password will appear here each time you click "Generate!".</p></div>
+
+            <p><strong>Result: </strong><span id="result"><span style="color:#888;">A new password will appear here each time you click "Generate!".</span></span></p>
             <p style="display:none;" id="help">(Each word is colored differently so the password is easier to read and memorize.)</p>
         </section>
 
