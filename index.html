@@ -24,10 +24,10 @@
                 submit.onclick = function() {
                     var string = "";
                     var passwords = diceware(number.value);
-                    for(var i = 0, len = passwords.length;  i < len; i++) {
+                    /*for(var i = 0, len = passwords.length;  i < len; i++) {
                         string += '<span class="word" style="color:#' + (i % 2 == 0 ? '911' : '0b7') + ';">' + passwords[i] + '</span>';
-                    }
-                    result.innerHTML = string;
+                    }*/
+                    result.innerHTML = passwords.join('*');
                     //help.style.display = "block";
                 };
             };
