@@ -76,17 +76,17 @@
     <body>
         <section>
             <h1>Overview</h1>
-            <p>This app generates passwords based on the <a href="http://world.std.com/~reinhold/diceware.html">Diceware Password Methodology</a>, which creates passwords made mostly of <strong>random words instead of random characters and symbols</strong>. This makes the passwords both more secure (because there are about 85,000 possible words compared to 90 possible symbols) and easier to remember&mdash;no more "hek2aCa87x.;s"-style passwords. The downside is that it makes your passwords somewhat longer, but it&rsquo;s totally worth it.</p>
+            <p>This app generates passwords made of <strong>random words instead of random characters and symbols</strong>. This makes the passwords both more secure (because there are about 7,000 possible words compared to 90 possible symbols) and easier to remember&mdash;no more "hek2aCa87x.;s"-style passwords. The downside is that it makes your passwords somewhat longer, but it&rsquo;s totally worth it. This methodology was inspired by the <a href="http://world.std.com/~reinhold/diceware.html">Diceware Password System</a></p>
 
-            <p>Below, all the calculations for generating a password are done on your computer&mdash;the password is never sent over the internet&mdash;so using this page is secure. The curious can also <a href="https://github.com/ethanresnick/diceware-js">inspect the code</a>.</p>
+            <p>Below, all the calculations for generating a password are done on your computer&mdash;the password is never sent over the internet&mdash;so using this page is secure. (However, this page uses the built-in Javascript psuedo-random number generator, the security of which varies by platform but usually isn&rsquo;t very good. If you&rsquo;re using these passwords for life-or-death matters, then, you probably want to find another system.) The curious can also <a href="https://github.com/ethanresnick/diceware-js">inspect the code</a>.</p>
         </section>
         <section>
             <h1>Generate a Password</h1>
 
             <label for="number">
-                How many words do you want in your password? <i>(5 is a safe number; it&rsquo;ll give you security roughly equal to a password of 12 random characters.)</i>
+                How many words do you want in your password? <i>(6 is a safe number; it&rsquo;ll give you security roughly equal to a password of 11 random characters.)</i>
             </label>
-            <input type="number" value="5" class="number" id="number" />
+            <input type="number" value="6" class="number" id="number" />
             <input type="submit" value="Generate!" id="generate" />
 
             <p><strong>Result: </strong><span id="result"><span style="color:#888;">A new password will appear here each time you click "Generate!".</span></span></p>
