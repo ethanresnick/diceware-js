@@ -77,9 +77,7 @@
     <body>
         <section>
             <h1>Overview</h1>
-            <p>This app generates passwords made of <strong>random words instead of random characters and symbols</strong>. This makes the passwords both more secure (because there are about 7,000 possible words compared to 90 possible symbols) and easier to remember&mdash;no more "hek2aCa87x.;s"-style passwords. The downside is that it makes your passwords somewhat longer, but it&rsquo;s totally worth it. This methodology was inspired by the <a href="http://world.std.com/~reinhold/diceware.html">Diceware Password System</a></p>
-
-            <p>Below, all the calculations for generating a password are done on your computer&mdash;the password is never sent over the internet&mdash;so using this page is secure. (However, this page uses the built-in Javascript psuedo-random number generator, the security of which varies by platform but usually isn&rsquo;t very good. If you&rsquo;re using these passwords for life-or-death matters, then, you probably want to find another system.) The curious can also <a href="https://github.com/ethanresnick/diceware-js">inspect the code</a>.</p>
+            <p>This app generates passwords made of <strong>random words instead of random characters and symbols</strong>. This makes the passwords both more secure (because we pull from about 7,000 words compared to the 90 possible symbols) and easier to remember&mdash;no more "hek2aCa87x.;s"-style passwords. The downside is that it makes your passwords somewhat longer, but it&rsquo;s totally worth it. This methodology was inspired by the <a href="http://world.std.com/~reinhold/diceware.html">Diceware Password System</a></p>
         </section>
         <section>
             <h1>Generate a Password</h1>
@@ -93,6 +91,10 @@
             <p><strong>Result: </strong><span id="result"><span style="color:#888;">A new password will appear here each time you click "Generate!".</span></span></p>
             <p style="display:none;" id="help">(Each word is colored differently so the password is easier to read and memorize.)</p>
         </section>
-
+        <section>
+            <h1>How secure is this?</h1>
+            <p>All the calculations for generating a password are done on your computer&mdash;the password is never sent over the internet&mdash;so you don&rsquo;t have to worry about someone intercepting your password. In that sense, it&rsquo;s totally secure.</p>
+            <p>But the security of these passwords also depends on the app being able to choose which words will go into the password in a way that&rsquo;s random or very close to random. To do this, it asks your computer for a series of random numbers. Unfortunately, most computers can&rsquo;t provide it with truly random numbers; instead they provide &ldquo;pseudo-random&rsquo; numbers. The security of this app, then, depends on how close to random these pseudo-random numbers actually are. You&rsquo;re web browser claims that it&rsquo;s using a <script>document.write(diceware.usingGoodRNG ? "good" : "bad")</script> pseudo-random number generator, so <script>document.write(diceware.usingGoodRNG ? "you probably don&rsquo;t have to worry" : "you probably shouldn&rsquo;t use this password in life-or-death situations")</script>.</p>
+            <p>The curious can also <a href="https://github.com/ethanresnick/diceware-js">inspect the code</a> for more information.</p>
     </body>
 </html>
